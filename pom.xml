@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -9,6 +8,11 @@
     <packaging>mule-application</packaging>
 
 	<name>world-demo-api</name>
+	<!--  parent>
+		<groupId>com.stryker.mvnprofiles</groupId>
+		<artifactId>MulesoftCloudProfiles</artifactId>
+		<version>1.0.3</version>
+	</parent-->
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,15 +35,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+				<!--classifier>mule-application</classifier-->
 				<cloudHubDeployment>
-				<uri>https://anypoint.mulesoft.com</uri>
-				<username>anujbhardwajmule</username>
-				<password>Backspace@123</password>
-				<environment>Sandbox</environment>
-				<workers>1</workers>
-				<workerType>Micro</workerType>
-				<applicationName>worldtimezone-service</applicationName>
-				<muleVersion>4.3.0</muleVersion>
+					<!--uri>https://anypoint.mulesoft.com</uri-->
+					<objectStoreV2>true</objectStoreV2>
+					<username>anujbhardwajmule</username>
+					<muleVersion>4.3.0</muleVersion>
+					<password>Backspace@123</password>
+					<environment>Sandbox</environment>
+					<workers>1</workers>
+					<workerType>MICRO</workerType>
+					<!--region>us-west-1</region-->
+					<applicationName>worldtimezone-service-anuj1</applicationName>
 				</cloudHubDeployment>
 				</configuration>
 			</plugin>
